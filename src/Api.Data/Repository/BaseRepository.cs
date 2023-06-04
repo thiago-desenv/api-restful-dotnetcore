@@ -3,7 +3,7 @@ using Api.Domain.Interfaces;
 
 namespace Api.Data.Repository
 {
-    public class BaseRepository<T> : IRespository<T> where T : BaseEntity
+    public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
         public Task<bool> DeleteAsync(Guid id)
         {
