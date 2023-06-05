@@ -86,10 +86,10 @@ namespace Api.Data.Repository
         {
             try
             {
-                var result = await _dataset.SingleAsync(p => p.Id.Equals(item.Id));
+                var result = await _dataset.SingleOrDefaultAsync(p => p.Id.Equals(item.Id));
                 if (result == null)
                 {
-                    return null;
+                    throw new Exception("Registro não encontrado no banco de dados");
                 }
 
                 item.UpdateAt = DateTime.UtcNow;
