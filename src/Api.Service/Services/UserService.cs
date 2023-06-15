@@ -28,14 +28,14 @@ namespace Api.Service.Services
             return await _repository.SelectAsync();
         }
 
-        public Task<UserEntity> Post(UserEntity user)
+        public async Task<UserEntity> Post(UserEntity user)
         {
-
+            return await _repository.InsertAsync(user);
         }
 
-        public Task<UserEntity> Put(UserEntity user)
+        public async Task<UserEntity> Put(UserEntity user)
         {
-            throw new NotImplementedException();
+            return await _repository.UpdateAsync(user);
         }
     }
 }
