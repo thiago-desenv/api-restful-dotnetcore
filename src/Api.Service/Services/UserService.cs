@@ -23,9 +23,9 @@ namespace Api.Service.Services
             return await _repository.SelectAsync(id);
         }
 
-        public Task<IEnumerable<UserEntity>> GetAll()
+        public async Task<IEnumerable<UserEntity>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _repository.SelectAsync();
         }
 
         public Task<UserEntity> Post(UserEntity user)
