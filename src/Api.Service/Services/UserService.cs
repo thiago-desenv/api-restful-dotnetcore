@@ -1,13 +1,21 @@
 using Api.Domain.Entities;
+using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services.User;
 
 namespace Api.Service.Services
 {
     public class UserService : IUserService
     {
-        public Task<bool> Delete(Guid id)
+        private IRepository<UserEntity> _repository;
+
+        public UserService(IRepository<UserEntity> repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+        }
+
+        public async Task<bool> Delete(Guid id)
+        {
+            return await _repository.DeleteAsync(id);
         }
 
         public Task<UserEntity> Get(Guid id)
