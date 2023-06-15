@@ -30,7 +30,7 @@ namespace Api.Service.Services
 
         public Task<UserEntity> Post(UserEntity user)
         {
-            throw new NotImplementedException();
+
         }
 
         public Task<UserEntity> Put(UserEntity user)
