@@ -1,6 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Api.Application.Controllers
 {
-    public class UsersController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsersController : ControllerBase
     {
 
     }
